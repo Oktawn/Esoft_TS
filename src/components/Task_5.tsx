@@ -11,11 +11,11 @@ type UserFieldsToBoolean = {
   [k in keyof User]: boolean;
 };
 
-export function getUserFieldType(key: keyof User) {
-  const temp: User = { id: 0, name: "", email: "", age: 0 };
-  return typeof temp[key];
 
+
+function getUserFieldType<T extends keyof User>(key: T): User[T] {
+  return null as any;
 }
 
 const nameType = getUserFieldType('id');
-const ageType = getUserFieldType("age");
+const ageType = getUserFieldType('email');
